@@ -3,12 +3,6 @@ import { Link } from "react-router-dom";
 import {useFormik } from 'formik';
 import axios from 'axios';
 
-// Importing toastify module
-import {toast} from 'react-toastify';
- 
-// Import toastify css file
-import 'react-toastify/dist/ReactToastify.css';
-
 
 const baseUrl = 'http://localhost/soul_business/public/api';
 
@@ -52,8 +46,9 @@ const Add = () => {
               })
                 .then(function (response) {
                 console.log(response);
-                  //handle success
-                  toast('Hello Geeks')
+                  if(response.data.status == true){
+                      alert(response.data.message)
+                  }
                 })
                 .catch(function (response) {
                   //handle error
