@@ -47,7 +47,7 @@ const Add = () => {
                 .then(function (response) {
                 console.log(response);
                   if(response.data.status == true){
-                      alert(response.data.message)
+                      alert(response.data.message) // <Redirect to="/" />
                   }
                 })
                 .catch(function (response) {
